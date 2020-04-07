@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 .wrapper {
-  display: flex;
   height: 100vh;
   width: 100vw;
 
@@ -43,4 +42,25 @@
       }
     }
   }  
+  .side {
+    width: 200px;
+    height: calc(100vh - 250px);
+    background-color: #442727;
+    position: relative;
+    .categories {
+      background-color: #eae7d9;
+      width: 150px;
+      height: 200px;
+      z-index: 1;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      &__list {
+        padding: 20px;
+        &__name {
+          padding: 5px;
+        }
+      }
+    }
+  }
 }
