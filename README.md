@@ -10,18 +10,16 @@
 
 ### Association
 - has_many :messages
-- has_many :groups, through: groups_users
-- has_many :groups_users
+- has_many :categories
 
-## groups テーブル
+## categories テーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
-- has_many :users, through: groups_users
-- has_many :groups_users
+- has_many :users
 
 ## massages テーブル
 |Column|Type|Options|
@@ -33,14 +31,5 @@
 
 ### Association
 - belongs_to :group
-- belongs_to :user
+- belongs_to :category
 
-## groups_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
