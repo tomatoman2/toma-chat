@@ -7,9 +7,7 @@
 
   .header {
     display: block;
-    height: 250px;
     &__main {
-      height: 200px;
       width: 100vw;
       background-color: #c9485b;
       color: #ffffff;
@@ -17,17 +15,17 @@
       align-items: center;
       font-family: "Comic Sans MS";
       &__title {
-        font-size: 50px;
-        padding-top: 40px;   
+        font-size: 40px;
+        padding-top: 20px;   
       }
       &__subtitle {
-        font-size: 20px;
-        padding-top: 20px;
+        font-size: 15px;
+        padding: 10px 0 10px 0;
       }
     }
     &__sub {
       background-color: #f5c3bc;
-      height: 50px;
+      height: 40px;
       width: 100vw;
       position: relative;
       ul {
@@ -35,22 +33,21 @@
         display: flex;
         position: absolute;
         right: 50px;
-        bottom: 15px;
+        bottom: 10px;
         li {
           margin-right: 10px;
         }
       }
     }
   }  
-  .side {
-    width: 200px;
-    height: calc(100vh - 250px);
-    background-color: #442727;
+  .main {
+    height: 100%;
+    background-color: #f0efef;
     position: relative;
     .categories {
-      background-color: #eae7d9;
+      background-color: #d1d1d0;
       width: 150px;
-      height: 200px;
+      height: 300px;
       z-index: 1;
       position: absolute;
       top: 40px;
@@ -58,7 +55,35 @@
       &__list {
         padding: 20px;
         &__name {
-          padding: 5px;
+          padding: 10px;
+          font-size: 15px;
+        }
+      }
+    }
+    .messages {
+      background-color: #fafafa;
+      height: calc(100vh - 190px);
+      padding: 35px 0 0 40px;
+      overflow: scroll;
+      .message {
+        &__info {
+          display: flex;
+          margin-bottom: 12px;
+          &__name {
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: #999999;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+        }
+        &__text {
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 46px;
         }
       }
     }
