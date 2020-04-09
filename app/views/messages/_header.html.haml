@@ -5,9 +5,7 @@
     .header__main__subtitle
       ー全国お取り寄せグルメ口コミサイトー
   .header__sub
-    %ul.header__sub__menu
-      %li.signup
-      -# = link_to "新規登録", new_user_registration_path
-      %li.login
-      -# = link_to edit_user_path(current_user) do
-        ログイン
+    .header__sub__menu
+      = link_to "新規登録", new_user_registration_path, class: "signup"
+      = link_to  "ログイン", new_user_session_path, class: "login"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"

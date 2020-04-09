@@ -28,13 +28,19 @@
       height: 40px;
       width: 100vw;
       position: relative;
-      ul {
+      &__menu {
         color: #ffffff;
         display: flex;
         position: absolute;
         right: 50px;
         bottom: 10px;
-        li {
+        .signup {
+          margin-right: 10px;
+        }
+        .login {
+          margin-right: 10px;
+        }
+        .logout {
           margin-right: 10px;
         }
       }
@@ -54,37 +60,11 @@
       left: 20px;
       &__list {
         padding: 20px;
+        text-align: center;
         &__name {
           padding: 10px;
           font-size: 12px;
           border-bottom: #ede7d9 1px solid;
-        }
-      }
-    }
-    .messages {
-      background-color: #fafafa;
-      height: calc(100vh - 190px);
-      padding: 35px 0 0 40px;
-      overflow: scroll;
-      .message {
-        &__info {
-          display: flex;
-          margin-bottom: 12px;
-          &__name {
-            color: #333333;
-            font-size: 16px;
-            font-weight: bold;
-          }
-          &__date {
-            color: #999999;
-            font-size: 12px;
-            margin-left: 10px;
-          }
-        }
-        &__text {
-          color: #434a54;
-          font-size: 14px;
-          margin-bottom: 46px;
         }
       }
     }
