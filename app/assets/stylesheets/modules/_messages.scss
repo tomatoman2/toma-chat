@@ -28,13 +28,19 @@
       height: 40px;
       width: 100vw;
       position: relative;
-      ul {
+      &__menu {
         color: #ffffff;
         display: flex;
         position: absolute;
         right: 50px;
         bottom: 10px;
-        li {
+        .signup {
+          margin-right: 10px;
+        }
+        .login {
+          margin-right: 10px;
+        }
+        .logout {
           margin-right: 10px;
         }
       }
