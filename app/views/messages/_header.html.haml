@@ -5,8 +5,11 @@
     .header__main__subtitle
       ー全国お取り寄せグルメ口コミサイトー
   .header__sub
-    .header__sub__menu
+    .header__sub__menu      
       .header__sub__menu__btn
-        = link_to "新規登録", new_user_registration_path, class: "signup"
-        = link_to "ログイン", new_user_session_path, class: "login"
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"
+        - if user_signed_in?
+          = link_to "投稿する", new_message_path, class: "contribution"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
+        - else
+          = link_to "ログイン", new_user_session_path, class: "login"
+          = link_to "新規登録", new_user_registration_path, class: "signup"

@@ -12,7 +12,7 @@
 - has_many :messages
 - has_many :categories
 
-## categories テーブル
+## categoriy テーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|

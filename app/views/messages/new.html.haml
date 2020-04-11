@@ -1,0 +1,8 @@
+.form
+= form_for [@message] do |f|
+  .form__list
+  = f.text_field :content, class: "hoge", size: 30
+  = f.submit
+  = f.text_area :content, class: "hoge", size: 30
+  = f.submit
+  -# = f.radio_button :category,"お米・麺・パン",お米・麺・パン
