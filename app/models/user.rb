@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :messages
   has_many :categories
   validates :name, presence: true, uniqueness: true
+  # validates :user_id, {presence: true}
+  # def user
+  #   return User.find_by(id: self.user_id)
+  # end
 end

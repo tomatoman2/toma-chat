@@ -1,0 +1,9 @@
+.header 
+  = render  "messages/header"
+.contents.row
+  = @name
+  さんの投稿一覧
+  .message
+    - @messages.each do |message|
+      = render "messages/message", collection: @messages
+    -# = paginate(@messages)

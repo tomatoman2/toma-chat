@@ -8,6 +8,7 @@
     .header__sub__menu      
       .header__sub__menu__btn
         - if user_signed_in?
+          = link_to "マイページ", "/users/#{current_user.id}"
           = link_to "投稿する", new_message_path, class: "contribution"
           = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
         - else

@@ -1,8 +1,8 @@
 .form
 = form_for [@message] do |f|
   .form__list
-  = f.text_field :content, class: "hoge", size: 30
-  = f.submit
-  = f.text_area :content, class: "hoge", size: 30
-  = f.submit
-  -# = f.radio_button :category,"お米・麺・パン",お米・麺・パン
+  = f.collection_select(:category_id, @categories, :id, :name ) 
+  = f.label :image, class: 'form__mask__image' do
+    = f.file_field :image, class: 'hidden'
+  = f.text_area :content, class: 'text', size: 30
+  = f.submit 'Send', class: 'form__submit'

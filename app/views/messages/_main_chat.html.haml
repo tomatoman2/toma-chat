@@ -10,5 +10,16 @@
         飲み物
       %p.categories__list__name
         お菓子
-  .messages
-    = render @messages
+  .message
+    .message__info    
+      .message__text
+        .message__info__name
+          - @messages.each do |message|
+            = message.user.name
+            - if message.content.present?
+              .message__text__content
+                = image_tag message.image.url, class: 'message__text__image' if message.image.present?
+              .message__text__content__
+                = message.content
+-#   %p.message__info__date
+    -#     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
