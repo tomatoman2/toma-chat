@@ -1,15 +1,10 @@
 .main
   .categories
-    .categories__list
-      カテゴリー
-      %p.categories__list__name
-        お米＊麺＊パン
-      %p.categories__list__name
-        お肉＊お魚
-      %p.categories__list__name
-        飲み物
-      %p.categories__list__name
-        お菓子
+    .categories__list 
+      Category
+      - @categories.each do |category|
+        .categories__list__name
+          = link_to "#{category.name}", "/categories/#{category.id}"
   .message
     .message__info    
       .message__text
@@ -19,7 +14,12 @@
             - if message.content.present?
               .message__text__content
                 = image_tag message.image.url, class: 'message__text__image' if message.image.present?
-              .message__text__content__
+              .message__text__content
                 = message.content
--#   %p.message__info__date
-    -#     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                - if user_signed_in? && current_user.id == message.user_id
+                  .message__text__content__more
+                    %ul.message__text__content__more__list
+                    %li
+                    = link_to '編集', "/messages/#{message.id}/edit", method: :get
+                    %li
+                    = link_to '削除', "/messages/#{message.id}", method: :delete

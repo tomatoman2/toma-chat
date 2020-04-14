@@ -4,6 +4,8 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.all
+    @categories = Category.all
+    @messages = Message.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -14,6 +16,21 @@ class MessagesController < ApplicationController
   def create
     Message.create(message_params)
     redirect_to root_path
+  end
+
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+  end
+
+  def edit
+    @message = Message.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    message = Message.find(params[:id])
+    message.update(message_params)
   end
 
   private

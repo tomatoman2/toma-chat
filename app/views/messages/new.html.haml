@@ -1,24 +1,5 @@
-.header
-  .header__main
-    .header__main__title
-      foodie share time
-    .header__main__subtitle
-      ー全国お取り寄せグルメ口コミサイトー
-  .header__sub
-    .header__sub__menu      
-      .header__sub__menu__btn
-        - if user_signed_in?
-          = link_to "マイページ", "/users/#{current_user.id}"
-          = link_to "投稿する", new_message_path, class: "contribution"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
-        - else
-          = link_to "ログイン", new_user_session_path, class: "login"
-          = link_to "新規登録", new_user_registration_path, class: "signup"
-.form
-= form_for [@message] do |f|
-  .form__list
-  = f.collection_select(:category_id, @categories, :id, :name ) 
-  = f.label :image, class: 'form__mask__image' do
-    = f.file_field :image, class: 'hidden'
-  = f.text_area :content, class: 'text', size: 30
-  = f.submit 'Send', class: 'form__submit'
+.message
+  -# = form_with(model: @message, local: true) do |form|
+  %h3
+  投稿する
+  = render partial: "form"

@@ -1,16 +1,17 @@
 .header
   .header__main
     .header__main__title
-      foodie share time
+      foodie share time 
     .header__main__subtitle
       ー全国お取り寄せグルメ口コミサイトー
   .header__sub
     .header__sub__menu      
-      .header__sub__menu__btn
-        - if user_signed_in?
-          = link_to "マイページ", "/users/#{current_user.id}"
-          = link_to "投稿する", new_message_path, class: "contribution"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout"
-        - else
-          = link_to "ログイン", new_user_session_path, class: "login"
-          = link_to "新規登録", new_user_registration_path, class: "signup"
+      .button
+      - if user_signed_in?
+        -# = .button{:href => "/users/#{current_user.id}"} "マイページ"
+        = link_to "マイページ", "/users/#{current_user.id}", class: "button"
+        = link_to "投稿する", new_message_path
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        = link_to "ログイン", new_user_session_path
+        = link_to "新規登録", new_user_registration_path

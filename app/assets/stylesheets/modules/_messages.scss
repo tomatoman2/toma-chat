@@ -1,94 +1,134 @@
 * {
   box-sizing: border-box;
 }
-.wrapper {
-  height: 100vh;
-  width: 100vw;
-
-  .header {
-    display: block;
-    &__main {
-      width: 100vw;
-      background-color: #c9485b;
-      color: #ffffff;
-      text-align: center;
-      align-items: center;
-      font-family: "Comic Sans MS";
-      &__title {
-        font-size: 40px;
-        padding-top: 20px;   
-      }
-      &__subtitle {
-        font-size: 15px;
-        padding: 10px 0 10px 0;
-      }
+.header {
+  display: block;
+  &__main {
+    width: 100vw;
+    color: #cc6373;
+    text-align: center;
+    align-items: center;
+    font-family: "Comic Sans MS";
+    &__title {
+      font-size: 40px;
+      padding-top: 20px;   
     }
-    &__sub {
-      background-color: #f5c3bc;
-      height: 40px;
-      width: 100vw;
-      position: relative;
-      &__menu {
-        color: #ffffff;
-        display: flex;
-        position: absolute;
-        right: 50px;
-        bottom: 10px;
-        .signup {
-          margin-right: 10px;
-        }
-        .login {
-          margin-right: 10px;
-        }
-        .logout {
-          margin-right: 10px;
-        }
-      }
+    &__subtitle {
+      font-size: 15px;
+      padding: 10px 0 10px 0;
     }
-  }  
-  .main {
+  }
+  &__sub {
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #cc6373;
+    height: 40px;
+    width: 100vw;
     position: relative;
-    height: calc(100vh - 100px);
-    .categories {
-      background-color: #d1d1d0;
-      width: 150px;
-      z-index: 1;
+    &__menu {
+      color: #ffffff;
+      display: flex;
       position: absolute;
-      top: 40px;
-      left: 20px;
-      &__list {
-        padding: 20px;
-        &__name {
-          padding: 10px;
-          font-size: 12px;
-          border-bottom: #ede7d9 1px solid;
+      right: 50px;
+      a {
+        text-decoration: none;
+        display       : inline-block;
+        border-radius : 5%;          /* 角丸       */
+        font-size     : 10pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 3px 9px;   /* 余白       */
+        background    : rgba(255, 166, 77, 0.78);     /* 背景色     */
+        color         : #ffffff;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        transition    : .3s;         /* なめらか変化 */
+        box-shadow    : 1px 1px #666666;  /* 影の設定 */
+        border        : 2px solid rgba(255, 166, 77, 0.78);    /* 枠の指定 */
+        .button:hover {
+          box-shadow    : none;        /* カーソル時の影消去 */
+          color         : rgba(255, 166, 77, 0.78);     /* 背景色     */
+          background    : #ffffff;     /* 文字色     */
         }
       }
+      // .signup {
+      //   margin-right: 10px;
+      // }
+      // .login {
+      //   margin-right: 10px;
+      // }
+      // .logout {
+      //   margin-right: 10px;
+      // }
     }
-    .message {
-      z-index: 1;
-      background-color: #ffffff;
-      position: absolute;
-      top: 30px;
-      left: 200px;
-      height: 100%;
-      width: 1000px;
-      overflow: scroll;
-      &__info {
-        margin: auto;
+  }
+}
+.main {
+  position: relative;
+  height: calc(100vh - 100px);
+  .categories {
+    background-color: #d1d1d0;
+    width: 150px;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    &__list {
+      padding: 20px;
+      &__name {
+        padding: 10px;
+        font-size: 12px;
+        border-bottom: #ede7d9 1px solid;
+      }
+    }
+  }
+  .message {
+    z-index: 1;
+    background-color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    height: 100%;
+    width: 1000px;
+    overflow: scroll;
+    &__info {
+      margin: auto;
+      display: flex;
+      &__name {
+        color: #333333;
+        font-size: 16px;
+        font-weight: bold;
+      } 
+    }
+    &__text__content {
+      border-bottom: black;
+      &__more {
+        font-size: 16px;
         display: flex;
-          &__name {
-            color: #333333;
-            font-size: 16px;
-            font-weight: bold;
-          }
-          // &__date {
-          //   color: #999999;
-          //   font-size: 12px;
-          //   margin-left: 10px;
-          // }
+        list-style: none;
+        a {
+          text-decoration: none;
+          margin-right: 5px;
+        }
       }
     }
   }
 }
-
+.button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 14pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 6px 9px;   /* 余白       */
+  background    : rgba(255, 127, 0, 0.86);     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 3px 3px 5px #666666;  /* 影の設定 */
+  border        : 2px solid rgba(255, 127, 0, 0.86);    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : rgba(255, 127, 0, 0.86);     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
