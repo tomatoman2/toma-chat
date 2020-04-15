@@ -11,7 +11,7 @@
         -# = .button{:href => "/users/#{current_user.id}"} "マイページ"
         = link_to "マイページ", "/users/#{current_user.id}", class: "button"
         = link_to "投稿する", new_message_path
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign_out"
       - else
         = link_to "ログイン", new_user_session_path
         = link_to "新規登録", new_user_registration_path

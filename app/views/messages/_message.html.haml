@@ -16,9 +16,11 @@
                 = image_tag message.image.url, class: 'message__text__image' if message.image.present?
               .message__text__content
                 = message.content
-                - if user_signed_in? && current_user.id == message.user_id
-                  .message__text__content__more
-                    %ul.message__text__content__more__list
+                .message__text__content__more
+                  %ul.message__text__content__more__list
+                  %li
+                  = link_to '詳細', "/messages/#{message.id}",  method: :get
+                  - if user_signed_in? && current_user.id == message.user_id
                     %li
                     = link_to '編集', "/messages/#{message.id}/edit", method: :get
                     %li
