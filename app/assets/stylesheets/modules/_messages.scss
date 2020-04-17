@@ -11,7 +11,11 @@
     font-family: "Comic Sans MS";
     &__title {
       font-size: 40px;
-      padding-top: 20px;   
+      padding-top: 20px;
+      a {
+        text-decoration: none;
+        color: #cc6373;
+      }
     }
     &__subtitle {
       font-size: 15px;
@@ -25,12 +29,24 @@
     height: 40px;
     width: 100vw;
     position: relative;
+    &__icon_image {
+      position: absolute;
+      right: 80px;
+      top:2px;
+      width: 10px;
+      height: 10px;
+      //サイズ指定
+      border-radius: 1px;
+      //画像を丸くする
+      object-fit: cover;
+      //タテヨコ比を変えないままトリミング
+    }
     &__menu {
       color: #ffffff;
-      display: flex;
       position: absolute;
       right: 50px;
-      a {
+      top: 2px;
+      .post {
         text-decoration: none;
         display       : inline-block;
         border-radius : 5%;          /* 角丸       */
@@ -44,40 +60,42 @@
         transition    : .3s;         /* なめらか変化 */
         box-shadow    : 1px 1px #666666;  /* 影の設定 */
         border        : 2px solid rgba(255, 166, 77, 0.78);    /* 枠の指定 */
-        :hover {
-          box-shadow    : none;        /* カーソル時の影消去 */
-          color         : rgba(255, 166, 77, 0.78);     /* 背景色     */
-          background    : #ffffff;     /* 文字色     */
-        }
       }
-      // .signup {
-      //   margin-right: 10px;
-      // }
-      // .login {
-      //   margin-right: 10px;
-      // }
-      // .logout {
-      //   margin-right: 10px;
-      // }
-    }
+      .post:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : rgba(255, 166, 77, 0.78);     /* 背景色     */
+        background    : #ffffff;     /* 文字色     */
+      }
+    }   
   }
 }
 .main {
   position: relative;
   height: calc(100vh - 100px);
   .categories {
-    background-color: #d1d1d0;
-    width: 150px;
+    background-color: #ffffff;
+    border: solid;
+    border-color: #559ae9;
+    border-radius: 8px;
+    width: 160px;
     z-index: 1;
     position: absolute;
     top: 40px;
     left: 20px;
     &__list {
       padding: 20px;
+      color: #559ae9;
+      text-align: center;
+      align-items: center;
+      font-family: "Comic Sans MS";
+      font-size: 22px;
       &__name {
-        padding: 10px;
-        font-size: 12px;
-        border-bottom: #ede7d9 1px solid;
+        padding: 8px;
+        font-size: 13px;
+        border-bottom: #ede7d9 3px solid;
+        &__tag {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -95,7 +113,7 @@
       display: flex;
       &__name {
         color: #333333;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
       } 
     }
@@ -126,4 +144,29 @@
       width: 200px;
     }
   }
+}
+
+.new {
+  &__form {
+    margin: 60px auto;
+    width: 700px;
+    border: 2px solid #cc6373;
+    &__title {
+      margin: 30px;
+      &__name {
+        font-size: 30px;
+        color: #cc6373;
+      }
+    }
+  }
+}
+
+
+.icon__image {
+  height: 40px;
+  //サイズ指定
+  border-radius: 1px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
 }

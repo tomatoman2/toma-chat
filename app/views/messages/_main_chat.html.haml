@@ -4,12 +4,13 @@
       Category
       - @categories.each do |category|
         .categories__list__name
-          = link_to "#{category.name}", "/categories/#{category.id}"
+          = link_to "#{category.name}", "/categories/#{category.id}", class: ".categories__list__name__tag"
   .message
     .message__info    
       .message__text
         .message__info__name
           - @messages.each do |message|
+            = image_tag message.user.image, class: 'icon__image'
             = message.user.name
             - if message.content.present?
               .message__text__content

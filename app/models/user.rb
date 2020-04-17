@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :comments
   validates :name, presence: true, uniqueness: true
+  mount_uploader :image, ImageUploader
   # validates :user_id, {presence: true}
   # def user
   #   return User.find_by(id: self.user_id)

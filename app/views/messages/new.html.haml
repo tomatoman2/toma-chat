@@ -1,5 +1,7 @@
-.message
-  -# = form_with(model: @message, local: true) do |form|
-  %h3
-  投稿する
-  = render partial: "form"
+.new
+  .new__form
+    .new__form__title
+      .new__form__title__name
+        投稿する
+    .new__form__right
+      = render partial: "form"
