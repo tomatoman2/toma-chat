@@ -10,7 +10,7 @@
     align-items: center;
     font-family: "Comic Sans MS";
     &__title {
-      font-size: 40px;
+      font-size: 50px;
       padding-top: 20px;
       a {
         text-decoration: none;
@@ -18,7 +18,7 @@
       }
     }
     &__subtitle {
-      font-size: 15px;
+      font-size: 18px;
       padding: 10px 0 10px 0;
     }
   }
@@ -91,10 +91,17 @@
       font-size: 22px;
       &__name {
         padding: 8px;
-        font-size: 13px;
         border-bottom: #ede7d9 3px solid;
-        &__tag {
+        .tag {
           text-decoration: none;
+          color: #8c8b8b;
+          font-size: 14px;    
+          font-weight: bold;
+        }
+        .tag:hover {
+          box-shadow    : none;        /* カーソル時の影消去 */
+          color         : #333333;     /* 背景色     */
+          background    : #ffffff;
         }
       }
     }
@@ -118,39 +125,88 @@
       } 
     }
     &__text__content {
-      border-bottom: black;
+      border-bottom: 5px double #8c8b8b;
+      margin: 10px auto 20px auto;
       &__more {
         font-size: 16px;
         display: flex;
         list-style: none;
-        a {
+        padding: 10px 0;
+        .select {
           text-decoration: none;
-          margin-right: 5px;
+          margin-right: 15px;
+          color: #837373;
+        }
+        .select:hover{
+          box-shadow: none;
+          color: #333333;
         }
       }
     }
   }
+  //コメント 
   .comments {
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 1100px;
     height: 100%;
     width: 300px;
+    border: solid;
+    border-color: #d5b3fc;
+    border-radius: 8px;
+    font-family: "Comic Sans MS";
+    font-size: 22px;
     &__form {
-      width: 200px;
+      color: #d5b3fc;
+      text-align: center;
+      align-items: center;
+      padding: 20px;
     }
     &__list {
       height: calc(100% - 200px);
-      width: 200px;
+      font-size: 22px;
+      color: #d5b3fc;
+      text-align: center;
+      align-items: center; 
+      &__title {
+        padding: 8px;
+        text-align: left;
+        .name {
+          text-decoration: none;
+          color: #8c8b8b;
+          font-size: 16px;    
+          font-weight: bold;
+          border-bottom: #ede7d9 3px solid;
+          padding: 2px;
+        }
+        .name:hover {
+          box-shadow    : none;        /* カーソル時の影消去 */
+          color         : #333333;     /* 背景色     */
+          background    : #ffffff;
+        }
+        &__text {
+          font-size: 16px;    
+          font-weight: bold;
+          color         : #333333;
+          padding: 2px;
+        }
+      }
     }
   }
 }
-
-.new {
+//投稿フォーム
+.write {
+  height: 100%;
   &__form {
     margin: 60px auto;
     width: 700px;
-    border: 2px solid #cc6373;
+    text-align: center;
+    align-items: center; 
+    border: solid;
+    border-color: #cc6373;
+    border-radius: 8px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
     &__title {
       margin: 30px;
       &__name {
@@ -160,13 +216,105 @@
     }
   }
 }
-
+//編集フォーム
+.edit {
+  height: 100%;
+  &__form {
+    margin: 60px auto;
+    width: 700px;
+    text-align: center;
+    align-items: center; 
+    border: solid;
+    border-color: #989afa;
+    border-radius: 8px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    &__title {
+      margin: 30px;
+      &__name {
+        font-size: 30px;
+        color: #989afa;
+      }
+    }
+  }
+}
+//投稿内容入力フォーム
+.field {
+  margin: 20px auto;
+  &__list {
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    .pic {
+      display: block;
+      padding: 20px;
+    }
+  }
+  .field-input {
+    input {
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+  }
+}
+//更新メッセージ
+.update {
+  margin: 60px auto;
+  width: 400px;
+  text-align: center;
+  border: solid;
+  border-color: #989afa;
+  border-radius: 8px;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  &__form {
+    margin: auto;
+    font-size: 30px;
+    color: #989afa;
+  }
+  .top {
+    text-decoration: none;
+    color: #989afa;
+  }
+}
+//削除メッセージ
+.destroy {
+  margin: 60px auto;
+  width: 400px;
+  text-align: center; 
+  border: solid;
+  border-color: #b5b9bb;
+  border-radius: 8px;
+  font-family: "Comic Sans MS";
+  font-weight: bold;
+  &__form {
+    margin: auto;
+    font-size: 30px;
+    color: #b5b9bb;
+  }
+  .top {
+    text-decoration: none;
+    color: #b5b9bb;
+  }
+}
 
 .icon__image {
-  height: 40px;
+  height: 55px;
   //サイズ指定
   border-radius: 1px;
   //画像を丸くする
   object-fit: cover;
   //タテヨコ比を変えないままトリミング
+}
+
+.contents {
+  padding: 10px;
+  &__title {
+    color: #8c8b8b;
+    font-size: 18px;    
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+  }
 }

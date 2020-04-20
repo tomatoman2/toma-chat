@@ -4,7 +4,7 @@
       Category
       - @categories.each do |category|
         .categories__list__name
-          = link_to "#{category.name}", "/categories/#{category.id}", class: ".categories__list__name__tag"
+          = link_to "#{category.name}", "/categories/#{category.id}", class: "tag"
   .message
     .message__info    
       .message__text
@@ -13,16 +13,16 @@
             = image_tag message.user.image, class: 'icon__image'
             = message.user.name
             - if message.content.present?
-              .message__text__content
+              .message__text__image
                 = image_tag message.image.url, class: 'message__text__image' if message.image.present?
               .message__text__content
                 = message.content
                 .message__text__content__more
                   %ul.message__text__content__more__list
                   %li
-                  = link_to '詳細', "/messages/#{message.id}",  method: :get
+                  = link_to '▶︎詳細', "/messages/#{message.id}",  method: :get, class: "select"
                   - if user_signed_in? && current_user.id == message.user_id
                     %li
-                    = link_to '編集', "/messages/#{message.id}/edit", method: :get
+                    = link_to '▶︎編集', "/messages/#{message.id}/edit", method: :get, class: "select"
                     %li
-                    = link_to '削除', "/messages/#{message.id}", method: :delete
+                    = link_to '▶︎削除', "/messages/#{message.id}", method: :delete, class: "select"

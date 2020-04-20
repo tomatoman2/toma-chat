@@ -1,8 +1,9 @@
-.form
+.field
 = form_for [@message] do |f|
-  .form__list
-  = f.collection_select(:category_id, @categories, :id, :name ) 
-  = f.label :image, class: 'form__mask__image' do
-    = f.file_field :image, class: 'hidden'
-  = f.text_area :content, class: 'text', size: 30
-  = f.submit 'Send', class: 'form__submit'
+  .field__list
+    カテゴリー選択
+    = f.collection_select(:category_id, @categories, :id, :name )
+    = f.label :image, class: 'pic' do
+      = f.file_field :image
+    = f.text_area :content, cols: 30, rows: 8, class: 'text'
+    = f.submit 'Send'

@@ -4,13 +4,13 @@
       Category
       - @categories.each do |category|
         .categories__list__name
-          = link_to "#{category.name}", "/categories/#{category.id}"
+          = link_to "#{category.name}", "/categories/#{category.id}", class: "tag"
   .message
     .message__info    
       .message__text
         .message__info__name
           = @message.user.name
-          .message__text__content
+          .message__text__image
             = image_tag @message.image.url, class: 'message__text__image'
           .message__text__content
             = @message.content
@@ -18,24 +18,24 @@
               .message__text__content__more
                 %ul.message__text__content__more__list
                 %li
-                = link_to '編集', "/messages/#{@message.id}/edit", method: :get
+                = link_to '▶︎編集', "/messages/#{@message.id}/edit", method: :get, class: "select"
                 %li
-                = link_to '削除', "/messages/#{@message.id}", method: :delete
+                = link_to '▶︎削除', "/messages/#{@message.id}", method: :delete, class: "select"
   .comments
     .comments__form
-      ＜コメント＞
+      Comment
       - if current_user
         = form_for [@message, @comment] do |f|
-          = f.text_area :text, class: 'text', size: 30
+          = f.text_area :text, class: 'text', cols: 17, rows: 3
           = f.submit "SEND", class: "form__submit"
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .comments__list
-      ＜コメント一覧＞
-      - if @comments
-        - @comments.each do |comment|
-          %p
-            %strong
-              = link_to comment.user.name, "/users/#{comment.user_id}"
-          = comment.text
+      Comment List
+      .comments__list__title
+        - if @comments
+          - @comments.each do |comment|
+            = link_to comment.user.name, "/users/#{comment.user_id}", class: "name"
+            .comments__list__title__text
+              = comment.text

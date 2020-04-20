@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title TomaChat
+    %title 
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -10,7 +10,9 @@
     .header
       .header__main
         .header__main__title
+          = icon('fa', 'gift', class: 'icon')
           = link_to "foodie share time", root_path, class: "header__main__title"
+          = icon('fa', 'truck', class: 'icon')
         .header__main__subtitle
           ー全国お取り寄せグルメ口コミサイトー
       .header__sub
