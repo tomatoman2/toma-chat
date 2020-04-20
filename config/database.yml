@@ -47,15 +47,11 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: toma-chat_production
-#   username: toma-chat
-#   password: <%= ENV['TOMA-CHAT_DATABASE_PASSWORD'] %>
 production:
   <<: *default
+  database: toma-chat_production
+  username: toma-chat
+  password: <%= ENV['TOMA-CHAT_DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: root
-  password:
