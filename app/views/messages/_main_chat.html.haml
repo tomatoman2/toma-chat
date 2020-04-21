@@ -16,7 +16,7 @@
               .message__text__image
                 = image_tag message.image.url, class: 'message__text__image' if message.image.present?
               .message__text__content
-                = message.content
+                = simple_format(message.content)
                 .message__text__content__more
                   %ul.message__text__content__more__list
                   %li

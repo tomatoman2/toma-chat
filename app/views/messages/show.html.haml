@@ -9,11 +9,12 @@
     .message__info    
       .message__text
         .message__info__name
+          = image_tag @message.user.image, class: 'icon__image'
           = @message.user.name
           .message__text__image
             = image_tag @message.image.url, class: 'message__text__image'
           .message__text__content
-            = @message.content
+            = simple_format(@message.content)
             - if user_signed_in? && current_user.id == @message.user_id
               .message__text__content__more
                 %ul.message__text__content__more__list
