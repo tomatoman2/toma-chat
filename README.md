@@ -10,7 +10,7 @@
 
 ### Association
 - has_many :messages
-- has_many :categories
+- has_many :comments
 
 ## categoriy テーブル
 |Column|Type|Options|
@@ -19,7 +19,6 @@
 
 ### Association
 - has_many :messages
-- has_many :users
 
 ## massages テーブル
 |Column|Type|Options|
@@ -27,9 +26,18 @@
 |text|string|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|message_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :user
 - belongs_to :category
+- has_many :comments
 
+## comments テーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|string|
+
+### Association
+- belongs_to :user
+- belongs_to :message
