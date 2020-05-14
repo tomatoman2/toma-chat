@@ -40,3 +40,15 @@
             = link_to comment.user.name, "/users/#{comment.user_id}", class: "name"
             .comments__list__title__text
               = comment.text
+      .likes__list
+        いいね
+        - if current_user.already_liked?(@message)
+          = link_to message_like_path(@message), method: :delete, remote: true do
+            = icon('fas','heart')
+          = @message.liked_users.count
+        - else
+          = link_to message_likes_path(@message), method: :post, remote: true do
+            = icon('far', 'heart')
+          = @message.liked_users.count
+        - @message.liked_users.each do |user|
+          %li= link_to user.name, user_path(@message)
