@@ -39,6 +39,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @comment = Comment.new
     @comments = @message.comments.includes(:user)
+    @like = Like.new
   end
 
   private

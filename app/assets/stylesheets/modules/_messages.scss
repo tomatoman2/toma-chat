@@ -149,7 +149,6 @@
     position: absolute;
     top: 40px;
     left: 1100px;
-    height: 100%;
     width: 300px;
     border: solid;
     border-color: #d5b3fc;
@@ -167,7 +166,8 @@
       font-size: 22px;
       color: #d5b3fc;
       text-align: center;
-      align-items: center; 
+      align-items: center;
+      padding: 20px; 
       &__title {
         padding: 8px;
         text-align: left;
@@ -189,6 +189,22 @@
           font-weight: bold;
           color         : #333333;
           padding: 2px;
+        }
+      }
+      .likes__list {
+        color: #989afa;
+        li {
+          list-style: none;
+          padding: 8px;
+          text-align: left;
+          a {
+            text-decoration: none;
+            color: #8c8b8b;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: #ede7d9 3px solid;
+            padding: 2px;
+          }
         }
       }
     }

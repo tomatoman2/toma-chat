@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "messages#index"
   resources :messages do
     resources :comments, only: :create
+    resources :likes, only: [:create, :destroy]
   end
   resources :users, only: [:edit, :update, :index, :show]
   resources :categories, only: [:show]
