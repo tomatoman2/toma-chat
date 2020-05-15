@@ -1,0 +1,46 @@
+.one
+.second
+  .second__form
+    .second__form__text
+      %h2 foodie share time
+      %p ー全国お取り寄せグルメ口コミサイトー
+      %br
+      %p あの味を、おうちでも。
+      %p お気に入りのグルメをシェアして
+      %p 食事から得る喜びが
+      %p 広がりますように。
+      %br
+      %p 生産者、料理人の込めた思いが
+      %p おうちに届き
+      %p 幸せが広がりますように。
+      %br
+      %p 願いを込めて当サイトは誕生しました。
+  .second__image
+    = image_tag asset_path('sweets.jpg'), class: 'two'
+  .third__image
+    = image_tag asset_path('tsumami.jpg'), class: 'three'
+  .forth__image
+    = image_tag asset_path('wine.jpg'), class: 'four'
+  .fifth__image
+    = image_tag asset_path('present1.jpg'), class: 'five'
+  .explain
+    .explain__text
+      %p 当サイトは完全無料で
+      %p ご利用いただけます。
+      %br
+      %p お気に入りグルメのシェアタイムを
+      %p お楽しみください。
+      %br
+      %p
+        = link_to '▶︎ 新規登録する', new_user_registration_path
+      %br
+      %p
+        = link_to '▶︎ ログインする', new_user_session_path
+      %br
+      %p
+        = link_to '▶︎ 口コミ一覧ページはこちら', messages_path
+.footer
+  .footer__title
+    = icon('fa', 'gift', class: 'icon')
+    = link_to "foodie share time", root_path, class: "header__main__title"
+    = icon('fa', 'truck', class: 'icon')

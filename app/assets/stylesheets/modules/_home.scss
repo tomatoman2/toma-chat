@@ -1,0 +1,109 @@
+body {
+  background-color: rgb(250, 250, 250);
+}
+.one {
+  background-image: image_url("food2.jpg");
+  background-size: cover;
+  height: 500px;
+  margin-top: 20px;
+}
+.second {
+  background-size: cover;
+  height: 1650px;
+  position: relative;
+  &__form {
+    background-color: #fadddd;
+    position: absolute;
+    top: 70px;
+    left: 15%;
+    width: 400px;
+    height: 400px;
+    font-family: serif;
+    &__text {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px 30px;
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 70px;
+    left: 55%;
+    .two {
+      height: 400px;
+    }
+  }
+  .third__image {
+    position: absolute;
+    top: 600px;
+    left: 5%;
+    .three {
+      height: 400px;
+    }
+  }
+  .forth__image {
+    position: absolute;
+    top: 600px;
+    left: 53%;
+    .four {
+      height: 400px;
+    }
+  }
+  .fifth__image {
+    position: absolute;
+    top: 1100px;
+    left: 5%;
+    .five {
+      height: 400px;
+    }
+  }
+  .explain {
+    background-color: #fadddd;
+    position: absolute;
+    top: 1100px;
+    left: 60%;
+    width: 400px;
+    height: 400px;
+    font-family: serif;
+    &__text {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 60px 30px;
+      a {
+        text-decoration: none;
+        color: #8c8b8b;
+        font-size: 16px;    
+        font-weight: bold;
+        border-bottom: #a8a49b 3px solid;
+        padding: 2px;
+      }
+      a:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+.footer {
+  height: 200px;
+  background-color: #cc6373;
+  background-size: cover;
+  &__title {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 16px;
+    a {
+      font-size: 24px;
+      text-decoration: none;
+      color: white;
+      font-family: "Comic Sans MS";
+    }
+    .icon {
+      color: white;
+    }
+  }
+}
