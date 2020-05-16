@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
   end
-  resources :users, only: [:edit, :update, :index, :show]
+  resources :users, only: [:edit, :update, :show]
   resources :categories, only: [:show]
 end
