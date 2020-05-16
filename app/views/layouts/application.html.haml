@@ -16,7 +16,8 @@
         .header__main__subtitle
           ー全国お取り寄せグルメ口コミサイトー
       .header__sub
-        .header__sub__icon__image
+        .header__sub__icon
+          = link_to '口コミ一覧ページ', messages_path, class: 'index'
         .header__sub__menu    
           - if user_signed_in?
             = link_to "マイページ", "/users/#{current_user.id}", class: "post"
