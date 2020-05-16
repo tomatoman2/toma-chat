@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 def show
-  @users = User.find(params[:id])
-  @name = current_user.name
-  @messages = current_user.messages
+  @user = User.find(params[:id])
+  @name = @user.name
+  @messages = @user.messages
   @categories = Category.all
 end
 
