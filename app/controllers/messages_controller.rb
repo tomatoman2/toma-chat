@@ -21,7 +21,8 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    if @message.user_id = current_user.id && @message.destroy
+    if @message.user_id = current_user.id
+      @message.destroy
       render 'messages/destroy'
     else
       redirect_to root_path
